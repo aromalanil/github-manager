@@ -9,7 +9,7 @@ function Search() {
   const categorySelect = useRef(null);
   const queryInput = useRef(null);
   const [apiData, setApiData] = useState({
-    data: null,
+    data: [],
     category: null,
     loading: false,
     error: false,
@@ -35,6 +35,7 @@ function Search() {
             loading: false,
             error: false,
           };
+          console.log(newApiData);
           setApiData(newApiData);
         })
         .catch(() => {
@@ -48,20 +49,32 @@ function Search() {
     }
   };
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    triggerSearch();
+  };
+
+
   return (
     <>
-      <input type="text" ref={queryInput} />
-      <select ref={categorySelect}>
-        <option value="users">Users</option>
-        <option value="repositories">Repositories</option>
-      </select>
-      <button onClick={() => triggerSearch()}>Search</button>
-      <SearchResult {...apiData} />
-      <PaginationController
-        hide={apiData.loading || apiData.error}
-        {...apiData.pages}
-        triggerSearch={triggerSearch}
-      />
+      <form className="search-form" onSubmit={handleFormSubmit}>
+        <div className="search-section">
+          <input type="text" ref={queryInput} />
+          <button type="submit">Search</button>
+        </div> 
+        <select ref={categorySelect}>
+          <option value="users">Users</option>
+          <option value="repositories">Repositories</option>
+        </select>
+      </form>
+      <div className="search-result">
+        <SearchResult {...apiData} />
+        <PaginationController
+          hide={apiData.loading || apiData.error || !apiData.data.length}
+          {...apiData.pages}
+          triggerSearch={triggerSearch}
+        />
+      </div>
     </>
   );
 }

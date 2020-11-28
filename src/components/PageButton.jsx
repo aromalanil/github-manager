@@ -1,17 +1,15 @@
 import React from 'react';
 
-function PageButton({ pageNumber, pageChange }) {
+function PageButton({ pageNumber, pageChange, icon }) {
   return (
-    <>
-      {pageNumber && (
-        <button
-          onClick={() => {
-            pageChange(pageNumber);
-          }}>
-          {pageNumber}
-        </button>
-      )}
-    </>
+    <button
+      className="page-button"
+      disabled={pageNumber === null}
+      onClick={() => {
+        pageChange(pageNumber);
+      }}>
+      {icon}
+    </button>
   );
 }
 

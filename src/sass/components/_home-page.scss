@@ -1,0 +1,28 @@
+.home {
+  margin: 2rem 3rem;
+  .home-header {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .empty-msg {
+    margin: 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@include media(500px) {
+  .home {
+    margin: 5%;
+  }
+  .home-header {
+    h2 {
+      font-size: 6vw;
+    }
+    button{
+      transform: scale(.8);
+    }
+  }
+}

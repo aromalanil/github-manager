@@ -1,10 +1,10 @@
 import React from 'react';
 import UserList from './UserList';
 import RepositoryList from './RepositoryList';
+import Loader from '../components/Loader';
 
 function SearchResult({ data, category, loading, error }) {
-
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader />;
   if (error) return <p>Error</p>;
   if (!data) return <></>;
 

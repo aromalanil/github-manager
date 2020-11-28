@@ -3,11 +3,13 @@ import UserCard from './UserCard';
 
 function UserList({ userData }) {
   return (
-    <div>
+    <div className="user-list">
       {userData.map((user) => {
+        console.log(user.username);
         return (
           <UserCard
             key={user.id}
+            id={user.id}
             username={user.login}
             avatar={user.avatar_url}
             url={user.html_url}

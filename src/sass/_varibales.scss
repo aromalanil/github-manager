@@ -1,0 +1,17 @@
+body {
+  --nav-color: #192734;
+  --body-color: #15202b;
+  --card-color: #15202b;
+  --text-color: #f1f1f1;
+  --second-color: #d1d1d1;
+  --input-placeholder: #919191;
+  --input-color: #253341;
+  --accent-color: #17bf63;
+  --stats-color: #f96a1f;
+  height: 100%;
+}
+
+$nav-color: var(--nav-color);
+
+.dark {
+}

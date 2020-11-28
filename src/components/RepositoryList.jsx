@@ -3,7 +3,7 @@ import RepositoryCard from './RepositoryCard';
 
 function RepositoryList({ RepositoryData }) {
   return (
-    <div>
+    <div className="repo-list">
       {RepositoryData.map((repository) => {
         return (
           <RepositoryCard

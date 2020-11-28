@@ -1,0 +1,63 @@
+.user-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.user-card {
+  display: block;
+  border: 0.5px solid rgba(255, 254, 254, 0.322);
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 2rem 1rem;
+  transition: 0.5s ease;
+  width: 160px;
+  height: 210px;
+  background-color: var(--card-color);
+  text-align: center;
+  .card-top {
+    height: 26%;
+    background-color: var(--accent-color);
+  }
+  .card-bottom {
+    padding: 0.3rem;
+    transform: translateY(-40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .username {
+      font-size: 1rem;
+      color: var(--text-color);
+    }
+    button {
+      transform: scale(0.9);
+      margin-top: 1rem;
+    }
+  }
+  .img-wrapper {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 5px;
+    }
+  }
+}
+
+@include media(500px) {
+  .user-card {
+    width: 80%;
+    min-width: 160px;
+  }
+}
