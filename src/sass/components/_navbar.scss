@@ -1,12 +1,12 @@
 .navbar {
   height: 60px;
   padding: 1rem 2rem;
-  background-color: $nav-color;
+  background-color: var(--nav-color);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  .logo{
-    a{
+  .logo {
+    a {
       text-decoration: none;
     }
   }

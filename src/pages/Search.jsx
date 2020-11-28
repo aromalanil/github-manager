@@ -54,14 +54,13 @@ function Search() {
     triggerSearch();
   };
 
-
   return (
     <>
       <form className="search-form" onSubmit={handleFormSubmit}>
         <div className="search-section">
-          <input type="text" ref={queryInput} />
+          <input placeholder="Enter Query" type="text" ref={queryInput} />
           <button type="submit">Search</button>
-        </div> 
+        </div>
         <select ref={categorySelect}>
           <option value="users">Users</option>
           <option value="repositories">Repositories</option>
