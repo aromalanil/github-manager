@@ -35,7 +35,6 @@ function Search() {
             loading: false,
             error: false,
           };
-          console.log(newApiData);
           setApiData(newApiData);
         })
         .catch(() => {

@@ -5,7 +5,6 @@ function UserList({ userData }) {
   return (
     <div className="user-list">
       {userData.map((user) => {
-        console.log(user.username);
         return (
           <UserCard
             key={user.id}
